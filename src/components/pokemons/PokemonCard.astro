@@ -13,6 +13,7 @@ const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 href={`/pokemons/${name}`} 
 class:list="rounded flex flex-col justify-center items-center p-2"> 
     <img 
+    transition:name={`${name}-image`}
     class:list={[
       { 'w-20 h-20': !isBig },
       { 'w-60 h-60': isBig },
