@@ -6,9 +6,6 @@ import PokemonCard from "../components/pokemons/PokemonCard.astro";
 const title = 'Pokemon Home page'
 const resp = await fetch('https://pokeapi.co/api/v2/pokemon')
 const data = (await resp.json()) as PokemonListResponse;
-
-
-
 ---
 
 <MainLayout title={title}>
@@ -18,12 +15,11 @@ const data = (await resp.json()) as PokemonListResponse;
     aria-label="Listado de pokemons"
     class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-4"
   >
-    {data.results.map(({name,url}) => (
+    {data.results.map(({name,url}) => 
 	  <PokemonCard 
 	   name = {name}
 	   url = {url}
 	  />
-	))}
+	)}
   </section>
- 
 </MainLayout>
