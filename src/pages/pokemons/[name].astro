@@ -43,7 +43,7 @@ image = {imagesrc}
                 <button onclick="history.back()" class="text-blue-500">Regresar</button>
                 <Title>{name}</Title>
             </div>
-            <button id="btn-favorite" class="ml-4">
+            <button id="btn-favorite" class="ml-4" data-name={name} data-id={id}>
                 <Icon data-outline name="heart-outline" size={50} />
                 <Icon data-full class="hidden" name="heart-full" size={50} />
                 </button>
