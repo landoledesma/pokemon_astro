@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import Title from '@components/shared/Title.astro';
 // Código Server Side Only - Momento de construcción BUILD TIME
 import PokemonCard from '@components/pokemons/PokemonCard.astro';
 import type { PokemonListResponse } from '@interfaces/pokemon-list.response';
@@ -20,8 +21,7 @@ console.log('🚀 ~ page:', page);
 ---
 
 <MainLayout title={title}>
-  <h1 class="text-3xl">Listado de Pokémons</h1>
-  <hr />
+  <Title>Listado Paginado</Title>
 
   <section
     aria-label="Listado de Pokémons"
