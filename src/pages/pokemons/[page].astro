@@ -8,7 +8,8 @@ import type { PokemonListResponse } from '@interfaces/pokemon-list.response';
 import MainLayout from '../../layouts/MainLayout.astro';
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200');
+  const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=200&offset=200");
+  //const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200');
   const { results } = (await resp.json()) as PokemonListResponse;
 
   return paginate(results, { pageSize: 10 });

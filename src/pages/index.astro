@@ -6,14 +6,14 @@ import Title from '@components/shared/Title.astro';
 
 import MainLayout from '@layouts/MainLayout.astro';
 
-const resp = await fetch('https://pokeapi.co/api/v2/pokemon');
+const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=200');
 const data = (await resp.json()) as PokemonListResponse;
 
 const title = 'Pokémon Static | Home';
 ---
 
 <MainLayout title={title}>
-  <Title>Listado</Title>
+  <Title>Listado de Pokémon</Title>
 
   <section
     aria-label="Listado de Pokémons"

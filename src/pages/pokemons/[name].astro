@@ -7,8 +7,10 @@ import Title from "@components/shared/Title.astro";
 import {Icon} from 'astro-icon/components';
 
 export const getStaticPaths = (async() => {
+    // Cambiar la petición para traer 200 ítems desde el ítem 200 en adelante
+    const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200&offset=200');
 
-    const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200')
+    //const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=200')
     const {results} = (await resp.json()) as PokemonListResponse;
     
     return results.map(({name,url}) => ({
